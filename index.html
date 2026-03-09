@@ -1,54 +1,426 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Arun Mergu Design</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body{
-font-family:Arial;
-margin:0;
-background:#111;
-color:white;
-text-align:center;
-}
-header{
-padding:60px;
-background:black;
-}
-h1{
-font-size:50px;
-}
-.portfolio{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-padding:40px;
-}
-.portfolio img{
-width:100%;
-border-radius:10px;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arun Mergu | Graphic Designer</title>
+  <meta name="description" content="Portfolio of Arun Mergu - Graphic Designer specializing in real estate, automobile and digital marketing creatives." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f0f10;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1120px, 92%); margin: auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(15,15,16,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+    .logo span { color: #f0b90b; }
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      font-size: 15px;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: #f0b90b; }
+
+    .hero {
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 40px;
+      padding: 60px 0;
+    }
+    .tag {
+      display: inline-block;
+      background: rgba(240,185,11,0.12);
+      color: #f0b90b;
+      border: 1px solid rgba(240,185,11,0.35);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 72px);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+    .hero h1 span { color: #f0b90b; }
+    .hero p {
+      font-size: 18px;
+      color: #d2d2d2;
+      max-width: 640px;
+      margin-bottom: 26px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+      display: inline-block;
+    }
+    .btn-primary {
+      background: #f0b90b;
+      color: #111;
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary {
+      border-color: rgba(255,255,255,0.18);
+      color: #fff;
+    }
+    .btn-secondary:hover {
+      border-color: #f0b90b;
+      color: #f0b90b;
+    }
+    .hero-card {
+      background: linear-gradient(180deg, #1b1b1d, #111114);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+    }
+    .hero-card img {
+      width: 100%;
+      border-radius: 22px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    section { padding: 84px 0; }
+    .section-title {
+      font-size: clamp(28px, 5vw, 42px);
+      margin-bottom: 12px;
+    }
+    .section-subtitle {
+      color: #bdbdbd;
+      margin-bottom: 32px;
+      max-width: 720px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .card {
+      background: #171719;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 24px;
+    }
+    .skills-list,
+    .software-list,
+    .services-list,
+    .contact-list { display: grid; gap: 14px; }
+    .skills-list div,
+    .software-list div,
+    .services-list div,
+    .contact-list a {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: #101012;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .stat {
+      background: #101012;
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.06);
+      text-align: center;
+    }
+    .stat h3 { color: #f0b90b; font-size: 28px; }
+    .stat p { color: #cfcfcf; font-size: 14px; }
+
+    .category {
+      margin-top: 42px;
+    }
+    .category h3 {
+      font-size: 24px;
+      margin-bottom: 16px;
+      color: #f0b90b;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .work-card {
+      overflow: hidden;
+      border-radius: 20px;
+      background: #18181b;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .work-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(240,185,11,0.5);
+    }
+    .work-card img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+    .work-info { padding: 14px 16px 18px; }
+    .work-info h4 { margin-bottom: 6px; font-size: 17px; }
+    .work-info p { color: #c7c7c7; font-size: 14px; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .contact-box h3 { margin-bottom: 12px; }
+    footer {
+      padding: 24px 0 40px;
+      text-align: center;
+      color: #a9a9a9;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .gallery,
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 640px) {
+      .nav { flex-direction: column; gap: 14px; }
+      .nav-links { justify-content: center; }
+      .hero { min-height: auto; padding: 36px 0 56px; }
+      .hero p { font-size: 16px; }
+      .gallery,
+      .services-grid,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+      section { padding: 62px 0; }
+    }
+  </style>
 </head>
-
 <body>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="logo">Arun<span>Designs</span></a>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<header>
-<h1>Arun Mergu</h1>
-<p>Graphic Designer</p>
-<p>Creative designs that make brands stand out</p>
-</header>
+  <main>
+    <section class="hero container" id="home">
+      <div>
+        <div class="tag">Graphic Designer • Real Estate • Automobile • Digital Marketing</div>
+        <h1>Hi, I'm <span>Arun Mergu</span></h1>
+        <p>
+          I’m a graphic designer passionate about turning ideas into striking visuals.
+          I create professional social media creatives, real estate marketing designs,
+          brochures and ad campaigns that help brands look premium and connect with the right audience.
+        </p>
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#portfolio">View My Work</a>
+          <a class="btn btn-secondary" href="#contact">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="profile.jpg" alt="Arun Mergu profile photo" />
+      </div>
+    </section>
 
-<section class="portfolio">
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">
+          I’m Arun Mergu, a graphic designer with a strong eye for detail and a passion for transforming ideas into visually compelling designs.
+          My process blends creativity, strategy and storytelling to create work that not only looks great but also communicates clearly.
+        </p>
+        <div class="about-grid">
+          <div class="card">
+            <h3 style="margin-bottom:14px;">What I Do</h3>
+            <div class="skills-list">
+              <div>Creative social media post designs for brands and businesses</div>
+              <div>Professional real estate marketing creatives and brochure designs</div>
+              <div>Automobile campaign posters and promotional ad designs</div>
+              <div>Brand-focused design with strong layout, typography and visual hierarchy</div>
+            </div>
+            <div class="stats">
+              <div class="stat">
+                <h3>3+</h3>
+                <p>Design Categories</p>
+              </div>
+              <div class="stat">
+                <h3>15+</h3>
+                <p>Featured Works</p>
+              </div>
+              <div class="stat">
+                <h3>100%</h3>
+                <p>Creative Focus</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h3 style="margin-bottom:14px;">Softwares I Use</h3>
+            <div class="software-list">
+              <div>Adobe Photoshop</div>
+              <div>Adobe Illustrator</div>
+              <div>Adobe Premiere Pro</div>
+              <div>Adobe After Effects</div>
+              <div>Canva</div>
+              <div>Autodesk Maya</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<img src="https://picsum.photos/600/400">
-<img src="https://picsum.photos/601/400">
-<img src="https://picsum.photos/602/400">
-<img src="https://picsum.photos/603/400">
+    <section id="portfolio">
+      <div class="container">
+        <h2 class="section-title">My Portfolio</h2>
+        <p class="section-subtitle">
+          A selection of my work across real estate, automobile advertising and digital marketing creatives.
+        </p>
 
-</section>
+        <div class="category">
+          <h3>Real Estate Designs</h3>
+          <div class="gallery">
+            <div class="work-card"><img src="images/realestate-1.jpeg" alt="Raghava at Raidurg real estate design" /><div class="work-info"><h4>Luxury Apartment Campaign</h4><p>High-rise project marketing creative for premium property promotion.</p></div></div>
+            <div class="work-card"><img src="images/realestate-2.jpeg" alt="Auro Realty project design" /><div class="work-info"><h4>Apartment Project Poster</h4><p>Project highlights with strong typography and premium visual treatment.</p></div></div>
+            <div class="work-card"><img src="images/realestate-3.jpeg" alt="Rajapushpa property design" /><div class="work-info"><h4>Residential Launch Creative</h4><p>Clean promotional layout for a large-scale apartment development.</p></div></div>
+            <div class="work-card"><img src="images/realestate-4.jpeg" alt="Wave by Raghava design" /><div class="work-info"><h4>Highrise Property Ad</h4><p>Luxury real estate branding with site details and project specifications.</p></div></div>
+            <div class="work-card"><img src="images/realestate-5.jpeg" alt="Greenspace Celestial design" /><div class="work-info"><h4>Modern Apartment Visual</h4><p>Fresh layout for residential property awareness campaign.</p></div></div>
+            <div class="work-card"><img src="images/realestate-6.jpeg" alt="Westbrook property design" /><div class="work-info"><h4>Project Information Poster</h4><p>Project stats-driven creative focused on clarity and impact.</p></div></div>
+            <div class="work-card"><img src="images/realestate-7.jpeg" alt="Boat Club Villas design" /><div class="work-info"><h4>Villa Campaign Design</h4><p>Elegant villa poster highlighting location and premium lifestyle.</p></div></div>
+          </div>
+        </div>
 
-<p>Email: arunjosh324@gmail.com</p>
+        <div class="category">
+          <h3>Automobile Designs</h3>
+          <div class="gallery">
+            <div class="work-card"><img src="images/auto-1.jpeg" alt="TVS Raider design" /><div class="work-info"><h4>TVS Raider Poster</h4><p>Bold sports-bike campaign with strong visual contrast and feature callouts.</p></div></div>
+            <div class="work-card"><img src="images/auto-2.jpeg" alt="TVS Ronin design" /><div class="work-info"><h4>TVS Ronin Launch Ad</h4><p>Modern-retro campaign focused on product aura and pricing emphasis.</p></div></div>
+            <div class="work-card"><img src="images/auto-3.jpeg" alt="TVS family EV design" /><div class="work-info"><h4>TVS EV Creative</h4><p>Soft premium poster for electric vehicle branding and positioning.</p></div></div>
+            <div class="work-card"><img src="images/auto-4.jpeg" alt="TVS Apache performance design" /><div class="work-info"><h4>TVS Apache Campaign</h4><p>Performance-focused creative built around speed and power message.</p></div></div>
+            <div class="work-card"><img src="images/auto-5.jpeg" alt="Dussehra campaign design" /><div class="work-info"><h4>Festival Promo Design</h4><p>Seasonal promotional creative for automobile campaign visibility.</p></div></div>
+            <div class="work-card"><img src="images/auto-6.jpeg" alt="TVS Ntorq street beast design" /><div class="work-info"><h4>Ntorq Street Beast</h4><p>High-energy product poster with speed, power and feature-led layout.</p></div></div>
+            <div class="work-card"><img src="images/auto-7.jpeg" alt="Apache bike design" /><div class="work-info"><h4>Sports Bike Poster</h4><p>Minimal and premium composition with a strong product spotlight.</p></div></div>
+            <div class="work-card"><img src="images/auto-8.jpeg" alt="Ntorq feature design" /><div class="work-info"><h4>Feature Highlight Creative</h4><p>Detail-led campaign design combining product shots and technical highlights.</p></div></div>
+          </div>
+        </div>
 
+        <div class="category">
+          <h3>Digital Marketing Designs</h3>
+          <div class="gallery">
+            <div class="work-card"><img src="images/digital-1.jpeg" alt="Google Ads marketing design" /><div class="work-info"><h4>Google Ads Creative</h4><p>Business promotion visual focused on paid ads and brand reach.</p></div></div>
+            <div class="work-card"><img src="images/digital-2.jpeg" alt="Digital marketing design" /><div class="work-info"><h4>Digital Marketing Poster</h4><p>Campaign creative for advanced digital marketing service promotion.</p></div></div>
+            <div class="work-card"><img src="images/digital-3.jpeg" alt="SEO poster design" /><div class="work-info"><h4>SEO Campaign Visual</h4><p>Eye-catching search engine optimization branding creative.</p></div></div>
+            <div class="work-card"><img src="images/digital-4.jpeg" alt="CRM promotion design" /><div class="work-info"><h4>CRM Promotion Design</h4><p>Professional business creative focused on automation and tracking.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2 class="section-title">Services</h2>
+        <p class="section-subtitle">Design services I can provide for brands, businesses and real estate marketing.</p>
+        <div class="services-grid">
+          <div class="card"><h3>Social Media Creatives</h3><p>Professional posts and campaign visuals for Instagram, Facebook and promotions.</p></div>
+          <div class="card"><h3>Real Estate Designs</h3><p>Apartment promotions, property launch creatives, brochure layouts and site branding.</p></div>
+          <div class="card"><h3>Automobile Promotions</h3><p>Bike and vehicle ad designs with product-focused and campaign-based styling.</p></div>
+          <div class="card"><h3>Brochure Design</h3><p>Clean and premium brochure designs for marketing, branding and property sales.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-subtitle">Feel free to contact me for new projects, collaborations and creative work.</p>
+        <div class="contact-grid">
+          <div class="card contact-box">
+            <h3>Let's Work Together</h3>
+            <p style="color:#cfcfcf; margin-bottom:16px;">
+              I’m always open to discussing new projects, creative ideas and opportunities to bring your vision to life.
+            </p>
+            <div class="hero-buttons">
+              <a class="btn btn-primary" href="https://wa.me/919440442062" target="_blank">WhatsApp Me</a>
+              <a class="btn btn-secondary" href="mailto:merguarun1@gmail.com">Email Me</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="contact-list">
+              <a href="tel:+919440442062"><strong>Phone:</strong> +91 94404 42062</a>
+              <a href="tel:+916309332132"><strong>Alternate:</strong> +91 63093 32132</a>
+              <a href="mailto:merguarun1@gmail.com"><strong>Email:</strong> merguarun1@gmail.com</a>
+              <a href="mailto:arunjosh324@gmail.com"><strong>Alternate Email:</strong> arunjosh324@gmail.com</a>
+              <a href="https://instagram.com/arundesignn" target="_blank"><strong>Instagram:</strong> @arundesignn</a>
+              <a href="https://instagram.com/_arun_josh" target="_blank"><strong>Instagram 2:</strong> @_arun_josh</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Arun Mergu. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>

@@ -4,11 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arun Mergu | Graphic Designer</title>
-  <meta
-    name="description"
-    content="Portfolio of Arun Mergu - Graphic Designer specializing in real estate, automobile and digital marketing creatives."
-  />
+  <meta name="description" content="Portfolio of Arun Mergu - Graphic Designer specializing in real estate, automobile and digital marketing creatives." />
   <style>
+    :root {
+      --bg: #f5f9ff;
+      --bg-soft: #eef5ff;
+      --card: rgba(255, 255, 255, 0.82);
+      --card-strong: #ffffff;
+      --text: #10233f;
+      --muted: #5f7391;
+      --line: rgba(50, 93, 160, 0.14);
+      --primary: #2f6fed;
+      --primary-dark: #1d4fb8;
+      --accent: #7fb5ff;
+      --shadow: 0 18px 45px rgba(46, 92, 173, 0.12);
+      --radius: 24px;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -21,14 +33,19 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #0f0f10;
-      color: #ffffff;
+      color: var(--text);
       line-height: 1.6;
+      background:
+        radial-gradient(circle at top left, rgba(127, 181, 255, 0.35), transparent 30%),
+        radial-gradient(circle at top right, rgba(47, 111, 237, 0.12), transparent 28%),
+        linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
+      transition: background 0.45s ease, color 0.35s ease;
     }
 
     a {
       text-decoration: none;
       color: inherit;
+      transition: 0.3s ease;
     }
 
     img {
@@ -46,9 +63,10 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(15, 15, 16, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+      transition: all 0.35s ease;
     }
 
     .nav {
@@ -61,11 +79,12 @@
     .logo {
       font-size: 24px;
       font-weight: 800;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
+      color: var(--text);
     }
 
     .logo span {
-      color: #f0b90b;
+      color: var(--primary);
     }
 
     .nav-links {
@@ -73,10 +92,12 @@
       gap: 22px;
       flex-wrap: wrap;
       font-size: 15px;
+      color: var(--muted);
     }
 
     .nav-links a:hover {
-      color: #f0b90b;
+      color: var(--primary);
+      transform: translateY(-1px);
     }
 
     .hero {
@@ -84,36 +105,44 @@
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
       align-items: center;
-      gap: 40px;
-      padding: 60px 0;
+      gap: 46px;
+      padding: 72px 0 60px;
     }
 
     .tag {
       display: inline-block;
-      background: rgba(240, 185, 11, 0.12);
-      color: #f0b90b;
-      border: 1px solid rgba(240, 185, 11, 0.35);
-      padding: 8px 14px;
+      background: rgba(47, 111, 237, 0.1);
+      color: var(--primary);
+      border: 1px solid rgba(47, 111, 237, 0.18);
+      padding: 9px 16px;
       border-radius: 999px;
       font-size: 14px;
       margin-bottom: 18px;
+      box-shadow: 0 8px 22px rgba(47, 111, 237, 0.08);
+      transition: 0.35s ease;
+    }
+
+    .tag:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(47, 111, 237, 0.12);
     }
 
     .hero h1 {
-      font-size: clamp(38px, 7vw, 72px);
-      line-height: 1.05;
+      font-size: clamp(40px, 7vw, 74px);
+      line-height: 1.04;
       margin-bottom: 18px;
+      letter-spacing: -1.4px;
     }
 
     .hero h1 span {
-      color: #f0b90b;
+      color: var(--primary);
     }
 
     .hero p {
       font-size: 18px;
-      color: #d2d2d2;
+      color: var(--muted);
       max-width: 640px;
-      margin-bottom: 26px;
+      margin-bottom: 28px;
     }
 
     .hero-buttons {
@@ -123,60 +152,72 @@
     }
 
     .btn {
-      padding: 14px 22px;
-      border-radius: 12px;
+      padding: 14px 24px;
+      border-radius: 14px;
       font-weight: 700;
       border: 1px solid transparent;
-      transition: 0.2s ease;
+      transition: all 0.32s ease;
       display: inline-block;
     }
 
     .btn-primary {
-      background: #f0b90b;
-      color: #111;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #ffffff;
+      box-shadow: 0 14px 30px rgba(47, 111, 237, 0.22);
     }
 
     .btn-primary:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 0 18px 34px rgba(47, 111, 237, 0.28);
     }
 
     .btn-secondary {
-      border-color: rgba(255, 255, 255, 0.18);
-      color: #fff;
+      background: rgba(255, 255, 255, 0.75);
+      border-color: rgba(47, 111, 237, 0.18);
+      color: var(--text);
+      box-shadow: 0 12px 24px rgba(35, 76, 145, 0.06);
     }
 
     .btn-secondary:hover {
-      border-color: #f0b90b;
-      color: #f0b90b;
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-3px);
     }
 
     .hero-card {
-      background: linear-gradient(180deg, #1b1b1d, #111114);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(239,246,255,0.92));
+      border: 1px solid rgba(47, 111, 237, 0.12);
+      border-radius: 30px;
       padding: 24px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+      box-shadow: var(--shadow);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .hero-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 52px rgba(46, 92, 173, 0.18);
     }
 
     .hero-card img {
       width: 100%;
-      border-radius: 22px;
-      aspect-ratio: 1/1;
+      border-radius: 24px;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
       object-position: center top;
     }
 
     section {
-      padding: 84px 0;
+      padding: 88px 0;
     }
 
     .section-title {
-      font-size: clamp(28px, 5vw, 42px);
+      font-size: clamp(30px, 5vw, 44px);
       margin-bottom: 12px;
+      letter-spacing: -0.8px;
     }
 
     .section-subtitle {
-      color: #bdbdbd;
+      color: var(--muted);
       margin-bottom: 32px;
       max-width: 720px;
     }
@@ -189,10 +230,19 @@
     }
 
     .card {
-      background: #171719;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 22px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
       padding: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(47, 111, 237, 0.22);
+      box-shadow: 0 22px 46px rgba(46, 92, 173, 0.16);
     }
 
     .skills-list,
@@ -206,9 +256,18 @@
     .software-list div,
     .contact-list a {
       padding: 14px 16px;
-      border-radius: 14px;
-      background: #101012;
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(47, 111, 237, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .skills-list div:hover,
+    .software-list div:hover,
+    .contact-list a:hover {
+      transform: translateX(4px);
+      border-color: rgba(47, 111, 237, 0.22);
+      background: #ffffff;
     }
 
     .stats {
@@ -219,69 +278,83 @@
     }
 
     .stat {
-      background: #101012;
+      background: rgba(255, 255, 255, 0.82);
       padding: 18px;
       border-radius: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(47, 111, 237, 0.1);
       text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .stat:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 26px rgba(46, 92, 173, 0.12);
     }
 
     .stat h3 {
-      color: #f0b90b;
+      color: var(--primary);
       font-size: 28px;
     }
 
     .stat p {
-      color: #cfcfcf;
+      color: var(--muted);
       font-size: 14px;
     }
 
     .category {
-      margin-top: 42px;
+      margin-top: 46px;
     }
 
     .category h3 {
       font-size: 24px;
       margin-bottom: 16px;
-      color: #f0b90b;
+      color: var(--primary);
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 20px;
     }
 
     .work-card {
       overflow: hidden;
-      border-radius: 20px;
-      background: #18181b;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: transform 0.25s ease, border-color 0.25s ease;
+      border-radius: 22px;
+      background: var(--card-strong);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
     }
 
     .work-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(240, 185, 11, 0.5);
+      transform: translateY(-8px);
+      border-color: rgba(47, 111, 237, 0.28);
+      box-shadow: 0 26px 52px rgba(46, 92, 173, 0.16);
     }
 
     .work-card img {
       width: 100%;
-      aspect-ratio: 4/5;
+      aspect-ratio: 4 / 5;
       object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .work-card:hover img {
+      transform: scale(1.04);
     }
 
     .work-info {
-      padding: 14px 16px 18px;
+      padding: 15px 16px 18px;
     }
 
     .work-info h4 {
       margin-bottom: 6px;
       font-size: 17px;
+      color: var(--text);
     }
 
     .work-info p {
-      color: #c7c7c7;
+      color: var(--muted);
       font-size: 14px;
     }
 
@@ -304,8 +377,10 @@
     footer {
       padding: 24px 0 40px;
       text-align: center;
-      color: #a9a9a9;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.32);
+      transition: 0.35s ease;
     }
 
     @media (max-width: 980px) {
@@ -443,167 +518,37 @@
         <div class="category">
           <h3>Real Estate Designs</h3>
           <div class="gallery">
-            <div class="work-card">
-              <img src="images/realestate-1.jpeg" alt="Raghava at Raidurg real estate design" />
-              <div class="work-info">
-                <h4>Luxury Apartment Campaign</h4>
-                <p>High-rise project marketing creative for premium property promotion.</p>
-              </div>
-            </div>
-
-            <div class="work-card">
-              <img src="images/realestate-2.jpeg" alt="Auro Realty project design" />
-              <div class="work-info">
-                <h4>Apartment Project Poster</h4>
-                <p>Project highlights with strong typography and premium visual treatment.</p>
-              </div>
-            </div>
-
-            <div class="work-card">
-              <img src="images/realestate-3.jpeg" alt="Rajapushpa property design" />
-              <div class="work-info">
-                <h4>Residential Launch Creative</h4>
-                <p>Clean promotional layout for a large-scale apartment development.</p>
-              </div>
-            </div>
-
-            <div class="work-card">
-              <img src="images/realestate-4.jpeg" alt="Wave by Raghava design" />
-              <div class="work-info">
-                <h4>Highrise Property Ad</h4>
-                <p>Luxury real estate branding with site details and project specifications.</p>
-              </div>
-            </div>
-
-            <div class="work-card">
-              <img src="images/realestate-5.jpeg" alt="Greenspace Celestial design" />
-              <div class="work-info">
-                <h4>Modern Apartment Visual</h4>
-                <p>Fresh layout for residential property awareness campaign.</p>
-              </div>
-            </div>
-
-            <div class="work-card">
-              <img src="images/realestate-6.jpeg" alt="Westbrook property design" />
-              <div class="work-info">
-                <h4>Project Information Poster</h4>
-                <p>Project stats-driven creative focused on clarity and impact.</p>
-              </div>
-            </div>
-
-            <div class="work-card">
-              <img src="images/realestate-7.jpeg" alt="Boat Club Villas design" />
-              <div class="work-info">
-                <h4>Villa Campaign Design</h4>
-                <p>Elegant villa poster highlighting location and premium lifestyle.</p>
-              </div>
-            </div>
+            <div class="work-card"><img src="images/realestate-1.jpeg" alt="Raghava at Raidurg real estate design" /><div class="work-info"><h4>Luxury Apartment Campaign</h4><p>High-rise project marketing creative for premium property promotion.</p></div></div>
+            <div class="work-card"><img src="images/realestate-2.jpeg" alt="Auro Realty project design" /><div class="work-info"><h4>Apartment Project Poster</h4><p>Project highlights with strong typography and premium visual treatment.</p></div></div>
+            <div class="work-card"><img src="images/realestate-3.jpeg" alt="Rajapushpa property design" /><div class="work-info"><h4>Residential Launch Creative</h4><p>Clean promotional layout for a large-scale apartment development.</p></div></div>
+            <div class="work-card"><img src="images/realestate-4.jpeg" alt="Wave by Raghava design" /><div class="work-info"><h4>Highrise Property Ad</h4><p>Luxury real estate branding with site details and project specifications.</p></div></div>
+            <div class="work-card"><img src="images/realestate-5.jpeg" alt="Greenspace Celestial design" /><div class="work-info"><h4>Modern Apartment Visual</h4><p>Fresh layout for residential property awareness campaign.</p></div></div>
+            <div class="work-card"><img src="images/realestate-6.jpeg" alt="Westbrook property design" /><div class="work-info"><h4>Project Information Poster</h4><p>Project stats-driven creative focused on clarity and impact.</p></div></div>
+            <div class="work-card"><img src="images/realestate-7.jpeg" alt="Boat Club Villas design" /><div class="work-info"><h4>Villa Campaign Design</h4><p>Elegant villa poster highlighting location and premium lifestyle.</p></div></div>
           </div>
         </div>
 
         <div class="category">
           <h3>Automobile Designs</h3>
           <div class="gallery">
-            <div class="work-card">
-              <img src="images/auto-1.jpeg" alt="TVS Raider design" />
-              <div class="work-info">
-                <h4>TVS Raider Poster</h4>
-                <p>Bold sports-bike campaign with strong visual contrast and feature callouts.</p>
-              </div>
-            </div>
-
-            <div class="work-card">
-              <img src="images/auto-2.jpeg" alt="TVS Ronin design" />
-              <div class="work-info">
-                <h4>TVS Ronin Launch Ad</h4>
-                <p>Modern-retro campaign focused on product aura and pricing emphasis.</p>
-              </div>
-            </div>
-
-            <div class="work-card">
-              <img src="images/auto-3.jpeg" alt="TVS family EV design" />
-              <div class="work-info">
-                <h4>TVS EV Creative</h4>
-                <p>Soft premium poster for electric vehicle branding and positioning.</p>
-              </div>
-            </div>
-
-            <div class="work-card">
-              <img src="images/auto-4.jpeg" alt="TVS Apache performance design" />
-              <div class="work-info">
-                <h4>TVS Apache Campaign</h4>
-                <p>Performance-focused creative built around speed and power message.</p>
-              </div>
-            </div>
-
-            <div class="work-card">
-              <img src="images/auto-5.jpeg" alt="Dussehra campaign design" />
-              <div class="work-info">
-                <h4>Festival Promo Design</h4>
-                <p>Seasonal promotional creative for automobile campaign visibility.</p>
-              </div>
-            </div>
-
-            <div class="work-card">
-              <img src="images/auto-6.jpeg" alt="TVS Ntorq street beast design" />
-              <div class="work-info">
-                <h4>Ntorq Street Beast</h4>
-                <p>High-energy product poster with speed, power and feature-led layout.</p>
-              </div>
-            </div>
-
-            <div class="work-card">
-              <img src="images/auto-7.jpeg" alt="Apache bike design" />
-              <div class="work-info">
-                <h4>Sports Bike Poster</h4>
-                <p>Minimal and premium composition with a strong product spotlight.</p>
-              </div>
-            </div>
-
-            <div class="work-card">
-              <img src="images/auto-8.jpeg" alt="Ntorq feature design" />
-              <div class="work-info">
-                <h4>Feature Highlight Creative</h4>
-                <p>Detail-led campaign design combining product shots and technical highlights.</p>
-              </div>
-            </div>
+            <div class="work-card"><img src="images/auto-1.jpeg" alt="TVS Raider design" /><div class="work-info"><h4>TVS Raider Poster</h4><p>Bold sports-bike campaign with strong visual contrast and feature callouts.</p></div></div>
+            <div class="work-card"><img src="images/auto-2.jpeg" alt="TVS Ronin design" /><div class="work-info"><h4>TVS Ronin Launch Ad</h4><p>Modern-retro campaign focused on product aura and pricing emphasis.</p></div></div>
+            <div class="work-card"><img src="images/auto-3.jpeg" alt="TVS family EV design" /><div class="work-info"><h4>TVS EV Creative</h4><p>Soft premium poster for electric vehicle branding and positioning.</p></div></div>
+            <div class="work-card"><img src="images/auto-4.jpeg" alt="TVS Apache performance design" /><div class="work-info"><h4>TVS Apache Campaign</h4><p>Performance-focused creative built around speed and power message.</p></div></div>
+            <div class="work-card"><img src="images/auto-5.jpeg" alt="Dussehra campaign design" /><div class="work-info"><h4>Festival Promo Design</h4><p>Seasonal promotional creative for automobile campaign visibility.</p></div></div>
+            <div class="work-card"><img src="images/auto-6.jpeg" alt="TVS Ntorq street beast design" /><div class="work-info"><h4>Ntorq Street Beast</h4><p>High-energy product poster with speed, power and feature-led layout.</p></div></div>
+            <div class="work-card"><img src="images/auto-7.jpeg" alt="Apache bike design" /><div class="work-info"><h4>Sports Bike Poster</h4><p>Minimal and premium composition with a strong product spotlight.</p></div></div>
+            <div class="work-card"><img src="images/auto-8.jpeg" alt="Ntorq feature design" /><div class="work-info"><h4>Feature Highlight Creative</h4><p>Detail-led campaign design combining product shots and technical highlights.</p></div></div>
           </div>
         </div>
 
         <div class="category">
           <h3>Digital Marketing Designs</h3>
           <div class="gallery">
-            <div class="work-card">
-              <img src="images/digital-1.jpeg" alt="Google Ads marketing design" />
-              <div class="work-info">
-                <h4>Google Ads Creative</h4>
-                <p>Business promotion visual focused on paid ads and brand reach.</p>
-              </div>
-            </div>
-
-            <div class="work-card">
-              <img src="images/digital-2.jpeg" alt="Digital marketing design" />
-              <div class="work-info">
-                <h4>Digital Marketing Poster</h4>
-                <p>Campaign creative for advanced digital marketing service promotion.</p>
-              </div>
-            </div>
-
-            <div class="work-card">
-              <img src="images/digital-3.jpeg" alt="SEO poster design" />
-              <div class="work-info">
-                <h4>SEO Campaign Visual</h4>
-                <p>Eye-catching search engine optimization branding creative.</p>
-              </div>
-            </div>
-
-            <div class="work-card">
-              <img src="images/digital-4.jpeg" alt="CRM promotion design" />
-              <div class="work-info">
-                <h4>CRM Promotion Design</h4>
-                <p>Professional business creative focused on automation and tracking.</p>
-              </div>
-            </div>
+            <div class="work-card"><img src="images/digital-1.jpeg" alt="Google Ads marketing design" /><div class="work-info"><h4>Google Ads Creative</h4><p>Business promotion visual focused on paid ads and brand reach.</p></div></div>
+            <div class="work-card"><img src="images/digital-2.jpeg" alt="Digital marketing design" /><div class="work-info"><h4>Digital Marketing Poster</h4><p>Campaign creative for advanced digital marketing service promotion.</p></div></div>
+            <div class="work-card"><img src="images/digital-3.jpeg" alt="SEO poster design" /><div class="work-info"><h4>SEO Campaign Visual</h4><p>Eye-catching search engine optimization branding creative.</p></div></div>
+            <div class="work-card"><img src="images/digital-4.jpeg" alt="CRM promotion design" /><div class="work-info"><h4>CRM Promotion Design</h4><p>Professional business creative focused on automation and tracking.</p></div></div>
           </div>
         </div>
       </div>
@@ -612,30 +557,12 @@
     <section id="services">
       <div class="container">
         <h2 class="section-title">Services</h2>
-        <p class="section-subtitle">
-          Design services I can provide for brands, businesses and real estate marketing.
-        </p>
-
+        <p class="section-subtitle">Design services I can provide for brands, businesses and real estate marketing.</p>
         <div class="services-grid">
-          <div class="card">
-            <h3>Social Media Creatives</h3>
-            <p>Professional posts and campaign visuals for Instagram, Facebook and promotions.</p>
-          </div>
-
-          <div class="card">
-            <h3>Real Estate Designs</h3>
-            <p>Apartment promotions, property launch creatives, brochure layouts and site branding.</p>
-          </div>
-
-          <div class="card">
-            <h3>Automobile Promotions</h3>
-            <p>Bike and vehicle ad designs with product-focused and campaign-based styling.</p>
-          </div>
-
-          <div class="card">
-            <h3>Brochure Design</h3>
-            <p>Clean and premium brochure designs for marketing, branding and property sales.</p>
-          </div>
+          <div class="card"><h3>Social Media Creatives</h3><p>Professional posts and campaign visuals for Instagram, Facebook and promotions.</p></div>
+          <div class="card"><h3>Real Estate Designs</h3><p>Apartment promotions, property launch creatives, brochure layouts and site branding.</p></div>
+          <div class="card"><h3>Automobile Promotions</h3><p>Bike and vehicle ad designs with product-focused and campaign-based styling.</p></div>
+          <div class="card"><h3>Brochure Design</h3><p>Clean and premium brochure designs for marketing, branding and property sales.</p></div>
         </div>
       </div>
     </section>
@@ -643,14 +570,11 @@
     <section id="contact">
       <div class="container">
         <h2 class="section-title">Contact Me</h2>
-        <p class="section-subtitle">
-          Feel free to contact me for new projects, collaborations and creative work.
-        </p>
-
+        <p class="section-subtitle">Feel free to contact me for new projects, collaborations and creative work.</p>
         <div class="contact-grid">
           <div class="card contact-box">
             <h3>Let's Work Together</h3>
-            <p style="color:#cfcfcf; margin-bottom:16px;">
+            <p style="color:#5f7391; margin-bottom:16px;">
               I’m always open to discussing new projects, creative ideas and opportunities to bring your vision to life.
             </p>
             <div class="hero-buttons">
@@ -658,7 +582,6 @@
               <a class="btn btn-secondary" href="mailto:merguarun1@gmail.com">Email Me</a>
             </div>
           </div>
-
           <div class="card">
             <div class="contact-list">
               <a href="tel:+919440442062"><strong>Phone:</strong> +91 94404 42062</a>

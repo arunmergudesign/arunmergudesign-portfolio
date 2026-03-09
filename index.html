@@ -5,428 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arun Mergu | Graphic Designer</title>
   <meta name="description" content="Portfolio of Arun Mergu - Graphic Designer specializing in real estate, automobile and digital marketing creatives." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <style>
     :root {
       --bg: #f5f9ff;
       --bg-soft: #eef5ff;
-      --card: rgba(255, 255, 255, 0.82);
-      --card-strong: #ffffff;
+      --card: rgba(255, 255, 255, 0.78);
+      --card-strong: rgba(255, 255, 255, 0.94);
       --text: #10233f;
       --muted: #5f7391;
       --line: rgba(50, 93, 160, 0.14);
       --primary: #2f6fed;
       --primary-dark: #1d4fb8;
-      --accent: #7fb5ff;
+      --accent: #7b61ff;
+      --sky: #72d2ff;
+      --mint: #7ce8c8;
+      --pink: #ff8ccf;
       --shadow: 0 18px 45px rgba(46, 92, 173, 0.12);
       --radius: 24px;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Inter', Arial, Helvetica, sans-serif;
       color: var(--text);
       line-height: 1.6;
       background:
-        radial-gradient(circle at top left, rgba(127, 181, 255, 0.35), transparent 30%),
-        radial-gradient(circle at top right, rgba(47, 111, 237, 0.12), transparent 28%),
-        linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
-      transition: background 0.45s ease, color 0.35s ease;
+        radial-gradient(circle at 10% 10%, rgba(123, 97, 255, 0.14), transparent 24%),
+        radial-gradient(circle at 85% 8%, rgba(114, 210, 255, 0.18), transparent 22%),
+        radial-gradient(circle at 50% 45%, rgba(124, 232, 200, 0.08), transparent 24%),
+        linear-gradient(180deg, #fcfeff 0%, #eef5ff 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      transition: background 0.5s ease, color 0.35s ease;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-      transition: 0.3s ease;
+    body::before, body::after {
+      content: "";
+      position: fixed;
+      border-radius: 999px;
+      filter: blur(80px);
+      z-index: -2;
+      pointer-events: none;
+      opacity: 0.55;
+      transition: all 0.5s ease;
+    }
+    body::before {
+      width: 320px; height: 320px; top: 100px; left: -80px;
+      background: linear-gradient(135deg, rgba(114, 210, 255, 0.45), rgba(123, 97, 255, 0.28));
+    }
+    body::after {
+      width: 280px; height: 280px; bottom: 80px; right: -60px;
+      background: linear-gradient(135deg, rgba(255, 140, 207, 0.28), rgba(47, 111, 237, 0.2));
     }
 
-    img {
-      display: block;
-      width: 100%;
-      max-width: 100%;
-    }
+    a { text-decoration: none; color: inherit; transition: 0.3s ease; }
+    img { display: block; width: 100%; max-width: 100%; }
+    .container { width: min(1120px, 92%); margin: auto; position: relative; z-index: 2; }
 
-    .container {
-      width: min(1120px, 92%);
-      margin: auto;
+    .bg-orb, .bg-grid, .bg-ring {
+      position: absolute; pointer-events: none; z-index: 0;
+    }
+    .bg-orb {
+      width: 220px; height: 220px; border-radius: 50%; filter: blur(10px); opacity: 0.28; animation: floaty 8s ease-in-out infinite;
+    }
+    .orb-one { top: -40px; right: 10%; background: linear-gradient(135deg, var(--sky), var(--accent)); }
+    .orb-two { bottom: -50px; left: 2%; background: linear-gradient(135deg, var(--mint), var(--sky)); animation-delay: -2s; }
+    .bg-grid {
+      inset: 0;
+      background-image: linear-gradient(rgba(47,111,237,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(47,111,237,0.05) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.5), transparent 85%);
+      opacity: 0.5;
+    }
+    .bg-ring {
+      width: 360px; height: 360px; border-radius: 50%; border: 1px solid rgba(47, 111, 237, 0.12); top: 60px; right: -120px;
     }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.72);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
-      transition: all 0.35s ease;
+      position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.68); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); transition: all 0.35s ease;
     }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: 0.4px;
-      color: var(--text);
-    }
-
-    .logo span {
-      color: var(--primary);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-      font-size: 15px;
-      color: var(--muted);
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-      transform: translateY(-1px);
-    }
-
-    .hero {
-      min-height: 92vh;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      align-items: center;
-      gap: 46px;
-      padding: 72px 0 60px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: rgba(47, 111, 237, 0.1);
-      color: var(--primary);
-      border: 1px solid rgba(47, 111, 237, 0.18);
-      padding: 9px 16px;
-      border-radius: 999px;
-      font-size: 14px;
-      margin-bottom: 18px;
-      box-shadow: 0 8px 22px rgba(47, 111, 237, 0.08);
-      transition: 0.35s ease;
-    }
-
-    .tag:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 26px rgba(47, 111, 237, 0.12);
-    }
-
-    .hero h1 {
-      font-size: clamp(40px, 7vw, 74px);
-      line-height: 1.04;
-      margin-bottom: 18px;
-      letter-spacing: -1.4px;
-    }
-
-    .hero h1 span {
-      color: var(--primary);
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: var(--muted);
-      max-width: 640px;
-      margin-bottom: 28px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 14px 24px;
-      border-radius: 14px;
-      font-weight: 700;
-      border: 1px solid transparent;
-      transition: all 0.32s ease;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: #ffffff;
-      box-shadow: 0 14px 30px rgba(47, 111, 237, 0.22);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 34px rgba(47, 111, 237, 0.28);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.75);
-      border-color: rgba(47, 111, 237, 0.18);
-      color: var(--text);
-      box-shadow: 0 12px 24px rgba(35, 76, 145, 0.06);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-      transform: translateY(-3px);
-    }
-
-    .hero-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(239,246,255,0.92));
-      border: 1px solid rgba(47, 111, 237, 0.12);
-      border-radius: 30px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-    }
-
-    .hero-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 24px 52px rgba(46, 92, 173, 0.18);
-    }
-
-    .hero-card img {
-      width: 100%;
-      border-radius: 24px;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    section {
-      padding: 88px 0;
-    }
-
-    .section-title {
-      font-size: clamp(30px, 5vw, 44px);
-      margin-bottom: 12px;
-      letter-spacing: -0.8px;
-    }
-
-    .section-subtitle {
-      color: var(--muted);
-      margin-bottom: 32px;
-      max-width: 720px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 32px;
-      align-items: start;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(12px);
-      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(47, 111, 237, 0.22);
-      box-shadow: 0 22px 46px rgba(46, 92, 173, 0.16);
-    }
-
-    .skills-list,
-    .software-list,
-    .contact-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .skills-list div,
-    .software-list div,
-    .contact-list a {
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid rgba(47, 111, 237, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .skills-list div:hover,
-    .software-list div:hover,
-    .contact-list a:hover {
-      transform: translateX(4px);
-      border-color: rgba(47, 111, 237, 0.22);
-      background: #ffffff;
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 24px;
-    }
-
-    .stat {
-      background: rgba(255, 255, 255, 0.82);
-      padding: 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(47, 111, 237, 0.1);
-      text-align: center;
-      transition: 0.3s ease;
-    }
-
-    .stat:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 26px rgba(46, 92, 173, 0.12);
-    }
-
-    .stat h3 {
-      color: var(--primary);
-      font-size: 28px;
-    }
-
-    .stat p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .category {
-      margin-top: 46px;
-    }
-
-    .category h3 {
-      font-size: 24px;
-      margin-bottom: 16px;
-      color: var(--primary);
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .work-card {
-      overflow: hidden;
-      border-radius: 22px;
-      background: var(--card-strong);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
-    }
-
-    .work-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(47, 111, 237, 0.28);
-      box-shadow: 0 26px 52px rgba(46, 92, 173, 0.16);
-    }
-
-    .work-card img {
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      transition: transform 0.45s ease;
-    }
-
-    .work-card:hover img {
-      transform: scale(1.04);
-    }
-
-    .work-info {
-      padding: 15px 16px 18px;
-    }
-
-    .work-info h4 {
-      margin-bottom: 6px;
-      font-size: 17px;
-      color: var(--text);
-    }
-
-    .work-info p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .contact-box h3 {
-      margin-bottom: 12px;
-    }
-
-    footer {
-      padding: 24px 0 40px;
-      text-align: center;
-      color: var(--muted);
-      border-top: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.32);
-      transition: 0.35s ease;
-    }
-
-    @media (max-width: 980px) {
-      .hero,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery,
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav {
-        flex-direction: column;
-        gap: 14px;
-      }
-
-      .nav-links {
-        justify-content: center;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 36px 0 56px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .gallery,
-      .services-grid,
-      .stats {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 62px 0;
-      }
-    }
-  </style>
-</head>
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+    .logo { fon
 <body>
   <header>
     <div class="container nav">

@@ -4,11 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Arun Mergu | Graphic Designer</title>
-  <meta name="description" content="Portfolio of Arun Mergu - Graphic Designer specializing in real estate, automobile and digital marketing creatives." />
+  <meta
+    name="description"
+    content="Portfolio of Arun Mergu - Graphic Designer specializing in real estate, automobile and digital marketing creatives."
+  />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <style>
     :root {
       --bg: #f5f9ff;
@@ -28,8 +32,16 @@
       --radius: 24px;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', Arial, Helvetica, sans-serif;
       color: var(--text);
@@ -45,7 +57,8 @@
       transition: background 0.5s ease, color 0.35s ease;
     }
 
-    body::before, body::after {
+    body::before,
+    body::after {
       content: "";
       position: fixed;
       border-radius: 999px;
@@ -55,193 +68,635 @@
       opacity: 0.55;
       transition: all 0.5s ease;
     }
+
     body::before {
-      width: 320px; height: 320px; top: 100px; left: -80px;
+      width: 320px;
+      height: 320px;
+      top: 100px;
+      left: -80px;
       background: linear-gradient(135deg, rgba(114, 210, 255, 0.45), rgba(123, 97, 255, 0.28));
     }
+
     body::after {
-      width: 280px; height: 280px; bottom: 80px; right: -60px;
+      width: 280px;
+      height: 280px;
+      bottom: 80px;
+      right: -60px;
       background: linear-gradient(135deg, rgba(255, 140, 207, 0.28), rgba(47, 111, 237, 0.2));
     }
 
-    a { text-decoration: none; color: inherit; transition: 0.3s ease; }
-    img { display: block; width: 100%; max-width: 100%; }
-    .container { width: min(1120px, 92%); margin: auto; position: relative; z-index: 2; }
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: 0.3s ease;
+    }
 
-    .bg-orb, .bg-grid, .bg-ring {
-      position: absolute; pointer-events: none; z-index: 0;
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
     }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .bg-orb,
+    .bg-grid,
+    .bg-ring {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
     .bg-orb {
-      width: 220px; height: 220px; border-radius: 50%; filter: blur(10px); opacity: 0.28; animation: floaty 8s ease-in-out infinite;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      filter: blur(10px);
+      opacity: 0.28;
+      animation: floaty 8s ease-in-out infinite;
     }
-    .orb-one { top: -40px; right: 10%; background: linear-gradient(135deg, var(--sky), var(--accent)); }
-    .orb-two { bottom: -50px; left: 2%; background: linear-gradient(135deg, var(--mint), var(--sky)); animation-delay: -2s; }
+
+    .orb-one {
+      top: -40px;
+      right: 10%;
+      background: linear-gradient(135deg, var(--sky), var(--accent));
+    }
+
+    .orb-two {
+      bottom: -50px;
+      left: 2%;
+      background: linear-gradient(135deg, var(--mint), var(--sky));
+      animation-delay: -2s;
+    }
+
     .bg-grid {
       inset: 0;
-      background-image: linear-gradient(rgba(47,111,237,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(47,111,237,0.05) 1px, transparent 1px);
+      background-image:
+        linear-gradient(rgba(47,111,237,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(47,111,237,0.05) 1px, transparent 1px);
       background-size: 34px 34px;
       mask-image: linear-gradient(180deg, rgba(0,0,0,0.5), transparent 85%);
       opacity: 0.5;
     }
+
     .bg-ring {
-      width: 360px; height: 360px; border-radius: 50%; border: 1px solid rgba(47, 111, 237, 0.12); top: 60px; right: -120px;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      border: 1px solid rgba(47, 111, 237, 0.12);
+      top: 60px;
+      right: -120px;
     }
 
     header {
-      position: sticky; top: 0; z-index: 1000; background: rgba(255, 255, 255, 0.68); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); transition: all 0.35s ease;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.68);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+      transition: all 0.35s ease;
     }
-    .nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
-    .logo { font-size: 24px; font-weight: 800; letter-spacing: 0.4px; color: var(--text); }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      color: var(--text);
+    }
+
     .logo span {
       background: linear-gradient(135deg, var(--primary), var(--accent), var(--sky));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
     }
-    .nav-links { display: flex; gap: 22px; flex-wrap: wrap; font-size: 15px; color: var(--muted); }
-    .nav-links a:hover { color: var(--primary); transform: translateY(-1px); }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
 
     .hero {
-      min-height: 92vh; display: grid; grid-template-columns: 1.2fr 0.8fr; align-items: center; gap: 46px; padding: 72px 0 60px; position: relative;
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 46px;
+      padding: 72px 0 60px;
+      position: relative;
     }
+
     .tag {
-      display: inline-block; background: rgba(255, 255, 255, 0.72); color: var(--primary); border: 1px solid rgba(47, 111, 237, 0.18);
-      padding: 9px 16px; border-radius: 999px; font-size: 14px; margin-bottom: 18px; box-shadow: 0 8px 22px rgba(47, 111, 237, 0.08); transition: 0.35s ease; backdrop-filter: blur(12px);
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--primary);
+      border: 1px solid rgba(47, 111, 237, 0.18);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 22px rgba(47, 111, 237, 0.08);
+      transition: 0.35s ease;
+      backdrop-filter: blur(12px);
     }
-    .tag:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(47, 111, 237, 0.12); }
-    .hero h1 { font-size: clamp(40px, 7vw, 74px); line-height: 1.04; margin-bottom: 18px; letter-spacing: -1.4px; }
-    .hero h1 span, .section-title.gradient, .gradient-text {
+
+    .tag:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 26px rgba(47, 111, 237, 0.12);
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 7vw, 74px);
+      line-height: 1.04;
+      margin-bottom: 18px;
+      letter-spacing: -1.4px;
+    }
+
+    .hero h1 span,
+    .section-title.gradient,
+    .gradient-text {
       background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 50%, var(--sky) 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; color: transparent; background-size: 200% auto; animation: shine 6s linear infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      background-size: 200% auto;
+      animation: shine 6s linear infinite;
     }
-    .hero p { font-size: 18px; color: var(--muted); max-width: 640px; margin-bottom: 28px; }
-    .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .hero p {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
     .btn {
-      padding: 14px 24px; border-radius: 14px; font-weight: 700; border: 1px solid transparent; transition: all 0.32s ease; display: inline-block;
+      padding: 14px 24px;
+      border-radius: 14px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: all 0.32s ease;
+      display: inline-block;
     }
+
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--accent)); color: #ffffff; box-shadow: 0 14px 30px rgba(47, 111, 237, 0.22);
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
+      box-shadow: 0 14px 30px rgba(47, 111, 237, 0.22);
     }
-    .btn-primary:hover { transform: translateY(-3px) scale(1.01); box-shadow: 0 18px 34px rgba(47, 111, 237, 0.28); }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 18px 34px rgba(47, 111, 237, 0.28);
+    }
+
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.75); border-color: rgba(47, 111, 237, 0.18); color: var(--text); box-shadow: 0 12px 24px rgba(35, 76, 145, 0.06); backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.75);
+      border-color: rgba(47, 111, 237, 0.18);
+      color: var(--text);
+      box-shadow: 0 12px 24px rgba(35, 76, 145, 0.06);
+      backdrop-filter: blur(12px);
     }
-    .btn-secondary:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-3px); }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
 
     .hero-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(239,246,255,0.92)); border: 1px solid rgba(47, 111, 237, 0.12); border-radius: 30px; padding: 24px;
-      box-shadow: var(--shadow); transition: transform 0.35s ease, box-shadow 0.35s ease; backdrop-filter: blur(14px); position: relative; overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(239,246,255,0.92));
+      border: 1px solid rgba(47, 111, 237, 0.12);
+      border-radius: 30px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      backdrop-filter: blur(14px);
+      position: relative;
+      overflow: hidden;
     }
+
     .hero-card::before {
-      content: ""; position: absolute; inset: -20% auto auto -10%; width: 180px; height: 180px; border-radius: 50%; background: linear-gradient(135deg, rgba(114, 210, 255, 0.35), rgba(123, 97, 255, 0.2)); filter: blur(14px);
+      content: "";
+      position: absolute;
+      inset: -20% auto auto -10%;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(114, 210, 255, 0.35), rgba(123, 97, 255, 0.2));
+      filter: blur(14px);
     }
-    .hero-card:hover { transform: translateY(-8px); box-shadow: 0 24px 52px rgba(46, 92, 173, 0.18); }
-    .hero-card img { width: 100%; border-radius: 24px; aspect-ratio: 1 / 1; object-fit: cover; object-position: center top; position: relative; z-index: 1; }
+
+    .hero-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 52px rgba(46, 92, 173, 0.18);
+    }
+
+    .hero-card img {
+      width: 100%;
+      border-radius: 24px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center top;
+      position: relative;
+      z-index: 1;
+    }
 
     .floating-mail {
-      position: absolute; right: -12px; top: 28px; z-index: 3; display: grid; gap: 10px;
+      position: absolute;
+      right: -12px;
+      top: 28px;
+      z-index: 3;
+      display: grid;
+      gap: 10px;
     }
+
     .mail-bubble {
-      width: 56px; height: 56px; border-radius: 18px; display: grid; place-items: center;
-      background: rgba(255,255,255,0.82); border: 1px solid rgba(47,111,237,0.14); box-shadow: 0 18px 30px rgba(46,92,173,0.12); color: var(--primary);
-      backdrop-filter: blur(12px); animation: bubbleFloat 4s ease-in-out infinite;
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(47,111,237,0.14);
+      box-shadow: 0 18px 30px rgba(46,92,173,0.12);
+      color: var(--primary);
+      backdrop-filter: blur(12px);
+      animation: bubbleFloat 4s ease-in-out infinite;
     }
-    .mail-bubble:nth-child(2) { animation-delay: -1.3s; color: var(--accent); }
-    .mail-bubble:nth-child(3) { animation-delay: -2.2s; color: var(--sky); }
 
-    section { padding: 88px 0; position: relative; }
-    .section-title { font-size: clamp(30px, 5vw, 44px); margin-bottom: 12px; letter-spacing: -0.8px; }
-    .section-subtitle { color: var(--muted); margin-bottom: 32px; max-width: 720px; }
+    .mail-bubble:nth-child(2) {
+      animation-delay: -1.3s;
+      color: var(--accent);
+    }
 
-    .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 32px; align-items: start; }
+    .mail-bubble:nth-child(3) {
+      animation-delay: -2.2s;
+      color: var(--sky);
+    }
+
+    section {
+      padding: 88px 0;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 5vw, 44px);
+      margin-bottom: 12px;
+      letter-spacing: -0.8px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin-bottom: 32px;
+      max-width: 720px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 32px;
+      align-items: start;
+    }
+
     .card {
-      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); backdrop-filter: blur(12px);
-      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease; position: relative; overflow: hidden;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      position: relative;
+      overflow: hidden;
     }
-    .card::after {
-      content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.14), transparent 45%); pointer-events: none;
-    }
-    .card:hover { transform: translateY(-6px); border-color: rgba(47, 111, 237, 0.22); box-shadow: 0 22px 46px rgba(46, 92, 173, 0.16); }
 
-    .skills-list, .software-list, .contact-list { display: grid; gap: 14px; }
-    .skills-list div, .software-list div, .contact-list a {
-      padding: 14px 16px; border-radius: 16px; background: rgba(255, 255, 255, 0.72); border: 1px solid rgba(47, 111, 237, 0.1); transition: all 0.3s ease; position: relative; z-index: 1;
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.14), transparent 45%);
+      pointer-events: none;
     }
-    .skills-list div:hover, .software-list div:hover, .contact-list a:hover {
-      transform: translateX(4px); border-color: rgba(47, 111, 237, 0.22); background: #ffffff;
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(47, 111, 237, 0.22);
+      box-shadow: 0 22px 46px rgba(46, 92, 173, 0.16);
+    }
+
+    .skills-list,
+    .software-list,
+    .contact-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .skills-list div,
+    .software-list div,
+    .contact-list a {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(47, 111, 237, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .skills-list div:hover,
+    .software-list div:hover,
+    .contact-list a:hover {
+      transform: translateX(4px);
+      border-color: rgba(47, 111, 237, 0.22);
+      background: #ffffff;
     }
 
     .soft-item {
-      display: flex; align-items: center; gap: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
+
     .soft-icon {
-      width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; color: #fff; font-size: 18px; flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 18px;
+      flex-shrink: 0;
       box-shadow: 0 10px 22px rgba(46,92,173,0.16);
     }
-    .ps { background: linear-gradient(135deg, #001e36, #31a8ff); }
-    .ai { background: linear-gradient(135deg, #330000, #ff9a00); }
-    .pr { background: linear-gradient(135deg, #1f003f, #a855f7); }
-    .ae { background: linear-gradient(135deg, #140033, #7c3aed); }
-    .cv { background: linear-gradient(135deg, #00c4cc, #7d2ae8); }
-    .maya { background: linear-gradient(135deg, #0b6b68, #40c4aa); }
-    .mail-icon { background: linear-gradient(135deg, #2f6fed, #72d2ff); }
-    .insta-icon { background: linear-gradient(135deg, #fd1d1d, #fcb045 48%, #833ab4); }
-    .phone-icon { background: linear-gradient(135deg, #22c55e, #16a34a); }
 
-    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
+    .ps {
+      background: linear-gradient(135deg, #001e36, #31a8ff);
+    }
+
+    .ai {
+      background: linear-gradient(135deg, #330000, #ff9a00);
+    }
+
+    .pr {
+      background: linear-gradient(135deg, #1f003f, #a855f7);
+    }
+
+    .ae {
+      background: linear-gradient(135deg, #140033, #7c3aed);
+    }
+
+    .cv {
+      background: linear-gradient(135deg, #00c4cc, #7d2ae8);
+    }
+
+    .maya {
+      background: linear-gradient(135deg, #0b6b68, #40c4aa);
+    }
+
+    .mail-icon {
+      background: linear-gradient(135deg, #2f6fed, #72d2ff);
+    }
+
+    .insta-icon {
+      background: linear-gradient(135deg, #fd1d1d, #fcb045 48%, #833ab4);
+    }
+
+    .phone-icon {
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 24px;
+    }
+
     .stat {
-      background: rgba(255, 255, 255, 0.82); padding: 18px; border-radius: 18px; border: 1px solid rgba(47, 111, 237, 0.1); text-align: center; transition: 0.3s ease; position: relative; z-index: 1;
+      background: rgba(255, 255, 255, 0.82);
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(47, 111, 237, 0.1);
+      text-align: center;
+      transition: 0.3s ease;
+      position: relative;
+      z-index: 1;
     }
-    .stat:hover { transform: translateY(-4px); box-shadow: 0 14px 26px rgba(46, 92, 173, 0.12); }
-    .stat h3 { color: var(--primary); font-size: 28px; }
-    .stat p { color: var(--muted); font-size: 14px; }
 
-    .category { margin-top: 46px; }
-    .category h3 { font-size: 24px; margin-bottom: 16px; color: var(--primary); }
-    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .stat:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 26px rgba(46, 92, 173, 0.12);
+    }
+
+    .stat h3 {
+      color: var(--primary);
+      font-size: 28px;
+    }
+
+    .stat p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .category {
+      margin-top: 46px;
+    }
+
+    .category h3 {
+      font-size: 24px;
+      margin-bottom: 16px;
+      color: var(--primary);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
     .work-card {
-      overflow: hidden; border-radius: 22px; background: var(--card-strong); border: 1px solid var(--line); box-shadow: var(--shadow);
-      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease; position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      background: var(--card-strong);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+      position: relative;
     }
-    .work-card:hover { transform: translateY(-8px); border-color: rgba(47, 111, 237, 0.28); box-shadow: 0 26px 52px rgba(46, 92, 173, 0.16); }
-    .work-card img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; transition: transform 0.45s ease; }
-    .work-card:hover img { transform: scale(1.04); }
-    .work-info { padding: 15px 16px 18px; }
-    .work-info h4 { margin-bottom: 6px; font-size: 17px; color: var(--text); }
-    .work-info p { color: var(--muted); font-size: 14px; }
 
-    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-    .service-title { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-    .service-title i { color: var(--primary); }
+    .work-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(47, 111, 237, 0.28);
+      box-shadow: 0 26px 52px rgba(46, 92, 173, 0.16);
+    }
 
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .contact-box h3 { margin-bottom: 12px; }
+    .work-card img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .work-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .work-info {
+      padding: 15px 16px 18px;
+    }
+
+    .work-info h4 {
+      margin-bottom: 6px;
+      font-size: 17px;
+      color: var(--text);
+    }
+
+    .work-info p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .service-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .service-title i {
+      color: var(--primary);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .contact-box h3 {
+      margin-bottom: 12px;
+    }
 
     footer {
-      padding: 24px 0 40px; text-align: center; color: var(--muted); border-top: 1px solid var(--line); background: rgba(255, 255, 255, 0.32); transition: 0.35s ease;
+      padding: 24px 0 40px;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.32);
+      transition: 0.35s ease;
     }
 
     @keyframes floaty {
-      0%, 100% { transform: translateY(0px) translateX(0px); }
-      50% { transform: translateY(-16px) translateX(8px); }
+      0%, 100% {
+        transform: translateY(0px) translateX(0px);
+      }
+      50% {
+        transform: translateY(-16px) translateX(8px);
+      }
     }
-    @keyframes shine { to { background-position: 200% center; } }
+
+    @keyframes shine {
+      to {
+        background-position: 200% center;
+      }
+    }
+
     @keyframes bubbleFloat {
-      0%, 100% { transform: translateY(0px) scale(1); }
-      50% { transform: translateY(-10px) scale(1.04); }
+      0%, 100% {
+        transform: translateY(0px) scale(1);
+      }
+      50% {
+        transform: translateY(-10px) scale(1.04);
+      }
     }
 
     @media (max-width: 980px) {
-      .hero, .about-grid, .contact-grid { grid-template-columns: 1fr; }
-      .gallery, .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .bg-ring, .floating-mail { display: none; }
+      .hero,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery,
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .bg-ring,
+      .floating-mail {
+        display: none;
+      }
     }
+
     @media (max-width: 640px) {
-      .nav { flex-direction: column; gap: 14px; }
-      .nav-links { justify-content: center; }
-      .hero { min-height: auto; padding: 36px 0 56px; }
-      .hero p { font-size: 16px; }
-      .gallery, .services-grid, .stats { grid-template-columns: 1fr; }
-      section { padding: 62px 0; }
-      .bg-orb { width: 160px; height: 160px; }
+      .nav {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 36px 0 56px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .gallery,
+      .services-grid,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .bg-orb {
+        width: 160px;
+        height: 160px;
+      }
     }
   </style>
 </head>
@@ -265,6 +720,7 @@
       <div class="bg-orb orb-one"></div>
       <div class="bg-orb orb-two"></div>
       <div class="bg-ring"></div>
+
       <div>
         <div class="tag">Graphic Designer • Real Estate • Automobile • Digital Marketing</div>
         <h1>Hi, I'm <span>Arun Mergu</span></h1>
@@ -278,6 +734,7 @@
           <a class="btn btn-secondary" href="#contact">Contact Me</a>
         </div>
       </div>
+
       <div class="hero-card">
         <div class="floating-mail">
           <div class="mail-bubble"><i class="fa-regular fa-envelope"></i></div>
@@ -295,6 +752,7 @@
           I’m Arun Mergu, a graphic designer with a strong eye for detail and a passion for transforming ideas into visually compelling designs.
           My process blends creativity, strategy and storytelling to create work that not only looks great but also communicates clearly.
         </p>
+
         <div class="about-grid">
           <div class="card">
             <h3 style="margin-bottom:14px;">What I Do</h3>
@@ -304,6 +762,7 @@
               <div>Automobile campaign posters and promotional ad designs</div>
               <div>Brand-focused design with strong layout, typography and visual hierarchy</div>
             </div>
+
             <div class="stats">
               <div class="stat">
                 <h3>3+</h3>
@@ -332,7 +791,6 @@
             </div>
           </div>
         </div>
-        </div>
       </div>
     </section>
 
@@ -346,37 +804,167 @@
         <div class="category">
           <h3>Real Estate Designs</h3>
           <div class="gallery">
-            <div class="work-card"><img src="images/realestate-1.jpeg" alt="Raghava at Raidurg real estate design" /><div class="work-info"><h4>Luxury Apartment Campaign</h4><p>High-rise project marketing creative for premium property promotion.</p></div></div>
-            <div class="work-card"><img src="images/realestate-2.jpeg" alt="Auro Realty project design" /><div class="work-info"><h4>Apartment Project Poster</h4><p>Project highlights with strong typography and premium visual treatment.</p></div></div>
-            <div class="work-card"><img src="images/realestate-3.jpeg" alt="Rajapushpa property design" /><div class="work-info"><h4>Residential Launch Creative</h4><p>Clean promotional layout for a large-scale apartment development.</p></div></div>
-            <div class="work-card"><img src="images/realestate-4.jpeg" alt="Wave by Raghava design" /><div class="work-info"><h4>Highrise Property Ad</h4><p>Luxury real estate branding with site details and project specifications.</p></div></div>
-            <div class="work-card"><img src="images/realestate-5.jpeg" alt="Greenspace Celestial design" /><div class="work-info"><h4>Modern Apartment Visual</h4><p>Fresh layout for residential property awareness campaign.</p></div></div>
-            <div class="work-card"><img src="images/realestate-6.jpeg" alt="Westbrook property design" /><div class="work-info"><h4>Project Information Poster</h4><p>Project stats-driven creative focused on clarity and impact.</p></div></div>
-            <div class="work-card"><img src="images/realestate-7.jpeg" alt="Boat Club Villas design" /><div class="work-info"><h4>Villa Campaign Design</h4><p>Elegant villa poster highlighting location and premium lifestyle.</p></div></div>
+            <div class="work-card">
+              <img src="images/realestate-1.jpeg" alt="Raghava at Raidurg real estate design" />
+              <div class="work-info">
+                <h4>Luxury Apartment Campaign</h4>
+                <p>High-rise project marketing creative for premium property promotion.</p>
+              </div>
+            </div>
+
+            <div class="work-card">
+              <img src="images/realestate-2.jpeg" alt="Auro Realty project design" />
+              <div class="work-info">
+                <h4>Apartment Project Poster</h4>
+                <p>Project highlights with strong typography and premium visual treatment.</p>
+              </div>
+            </div>
+
+            <div class="work-card">
+              <img src="images/realestate-3.jpeg" alt="Rajapushpa property design" />
+              <div class="work-info">
+                <h4>Residential Launch Creative</h4>
+                <p>Clean promotional layout for a large-scale apartment development.</p>
+              </div>
+            </div>
+
+            <div class="work-card">
+              <img src="images/realestate-4.jpeg" alt="Wave by Raghava design" />
+              <div class="work-info">
+                <h4>Highrise Property Ad</h4>
+                <p>Luxury real estate branding with site details and project specifications.</p>
+              </div>
+            </div>
+
+            <div class="work-card">
+              <img src="images/realestate-5.jpeg" alt="Greenspace Celestial design" />
+              <div class="work-info">
+                <h4>Modern Apartment Visual</h4>
+                <p>Fresh layout for residential property awareness campaign.</p>
+              </div>
+            </div>
+
+            <div class="work-card">
+              <img src="images/realestate-6.jpeg" alt="Westbrook property design" />
+              <div class="work-info">
+                <h4>Project Information Poster</h4>
+                <p>Project stats-driven creative focused on clarity and impact.</p>
+              </div>
+            </div>
+
+            <div class="work-card">
+              <img src="images/realestate-7.jpeg" alt="Boat Club Villas design" />
+              <div class="work-info">
+                <h4>Villa Campaign Design</h4>
+                <p>Elegant villa poster highlighting location and premium lifestyle.</p>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="category">
           <h3>Automobile Designs</h3>
           <div class="gallery">
-            <div class="work-card"><img src="images/auto-1.jpeg" alt="TVS Raider design" /><div class="work-info"><h4>TVS Raider Poster</h4><p>Bold sports-bike campaign with strong visual contrast and feature callouts.</p></div></div>
-            <div class="work-card"><img src="images/auto-2.jpeg" alt="TVS Ronin design" /><div class="work-info"><h4>TVS Ronin Launch Ad</h4><p>Modern-retro campaign focused on product aura and pricing emphasis.</p></div></div>
-            <div class="work-card"><img src="images/auto-3.jpeg" alt="TVS family EV design" /><div class="work-info"><h4>TVS EV Creative</h4><p>Soft premium poster for electric vehicle branding and positioning.</p></div></div>
-            <div class="work-card"><img src="images/auto-4.jpeg" alt="TVS Apache performance design" /><div class="work-info"><h4>TVS Apache Campaign</h4><p>Performance-focused creative built around speed and power message.</p></div></div>
-            <div class="work-card"><img src="images/auto-5.jpeg" alt="Dussehra campaign design" /><div class="work-info"><h4>Festival Promo Design</h4><p>Seasonal promotional creative for automobile campaign visibility.</p></div></div>
-            <div class="work-card"><img src="images/auto-6.jpeg" alt="TVS Ntorq street beast design" /><div class="work-info"><h4>Ntorq Street Beast</h4><p>High-energy product poster with speed, power and feature-led layout.</p></div></div>
-            <div class="work-card"><img src="images/auto-7.jpeg" alt="Apache bike design" /><div class="work-info"><h4>Sports Bike Poster</h4><p>Minimal and premium composition with a strong product spotlight.</p></div></div>
-            <div class="work-card"><img src="images/auto-8.jpeg" alt="Ntorq feature design" /><div class="work-info"><h4>Feature Highlight Creative</h4><p>Detail-led campaign design combining product shots and technical highlights.</p></div></div>
+            <div class="work-card">
+              <img src="images/auto-1.jpeg" alt="TVS Raider design" />
+              <div class="work-info">
+                <h4>TVS Raider Poster</h4>
+                <p>Bold sports-bike campaign with strong visual contrast and feature callouts.</p>
+              </div>
+            </div>
+
+            <div class="work-card">
+              <img src="images/auto-2.jpeg" alt="TVS Ronin design" />
+              <div class="work-info">
+                <h4>TVS Ronin Launch Ad</h4>
+                <p>Modern-retro campaign focused on product aura and pricing emphasis.</p>
+              </div>
+            </div>
+
+            <div class="work-card">
+              <img src="images/auto-3.jpeg" alt="TVS family EV design" />
+              <div class="work-info">
+                <h4>TVS EV Creative</h4>
+                <p>Soft premium poster for electric vehicle branding and positioning.</p>
+              </div>
+            </div>
+
+            <div class="work-card">
+              <img src="images/auto-4.jpeg" alt="TVS Apache performance design" />
+              <div class="work-info">
+                <h4>TVS Apache Campaign</h4>
+                <p>Performance-focused creative built around speed and power message.</p>
+              </div>
+            </div>
+
+            <div class="work-card">
+              <img src="images/auto-5.jpeg" alt="Dussehra campaign design" />
+              <div class="work-info">
+                <h4>Festival Promo Design</h4>
+                <p>Seasonal promotional creative for automobile campaign visibility.</p>
+              </div>
+            </div>
+
+            <div class="work-card">
+              <img src="images/auto-6.jpeg" alt="TVS Ntorq street beast design" />
+              <div class="work-info">
+                <h4>Ntorq Street Beast</h4>
+                <p>High-energy product poster with speed, power and feature-led layout.</p>
+              </div>
+            </div>
+
+            <div class="work-card">
+              <img src="images/auto-7.jpeg" alt="Apache bike design" />
+              <div class="work-info">
+                <h4>Sports Bike Poster</h4>
+                <p>Minimal and premium composition with a strong product spotlight.</p>
+              </div>
+            </div>
+
+            <div class="work-card">
+              <img src="images/auto-8.jpeg" alt="Ntorq feature design" />
+              <div class="work-info">
+                <h4>Feature Highlight Creative</h4>
+                <p>Detail-led campaign design combining product shots and technical highlights.</p>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="category">
           <h3>Digital Marketing Designs</h3>
           <div class="gallery">
-            <div class="work-card"><img src="images/digital-1.jpeg" alt="Google Ads marketing design" /><div class="work-info"><h4>Google Ads Creative</h4><p>Business promotion visual focused on paid ads and brand reach.</p></div></div>
-            <div class="work-card"><img src="images/digital-2.jpeg" alt="Digital marketing design" /><div class="work-info"><h4>Digital Marketing Poster</h4><p>Campaign creative for advanced digital marketing service promotion.</p></div></div>
-            <div class="work-card"><img src="images/digital-3.jpeg" alt="SEO poster design" /><div class="work-info"><h4>SEO Campaign Visual</h4><p>Eye-catching search engine optimization branding creative.</p></div></div>
-            <div class="work-card"><img src="images/digital-4.jpeg" alt="CRM promotion design" /><div class="work-info"><h4>CRM Promotion Design</h4><p>Professional business creative focused on automation and tracking.</p></div></div>
+            <div class="work-card">
+              <img src="images/digital-1.jpeg" alt="Google Ads marketing design" />
+              <div class="work-info">
+                <h4>Google Ads Creative</h4>
+                <p>Business promotion visual focused on paid ads and brand reach.</p>
+              </div>
+            </div>
+
+            <div class="work-card">
+              <img src="images/digital-2.jpeg" alt="Digital marketing design" />
+              <div class="work-info">
+                <h4>Digital Marketing Poster</h4>
+                <p>Campaign creative for advanced digital marketing service promotion.</p>
+              </div>
+            </div>
+
+            <div class="work-card">
+              <img src="images/digital-3.jpeg" alt="SEO poster design" />
+              <div class="work-info">
+                <h4>SEO Campaign Visual</h4>
+                <p>Eye-catching search engine optimization branding creative.</p>
+              </div>
+            </div>
+
+            <div class="work-card">
+              <img src="images/digital-4.jpeg" alt="CRM promotion design" />
+              <div class="work-info">
+                <h4>CRM Promotion Design</h4>
+                <p>Professional business creative focused on automation and tracking.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -385,12 +973,30 @@
     <section id="services">
       <div class="container">
         <h2 class="section-title gradient">Services</h2>
-        <p class="section-subtitle">Design services I can provide for brands, businesses and real estate marketing.</p>
+        <p class="section-subtitle">
+          Design services I can provide for brands, businesses and real estate marketing.
+        </p>
+
         <div class="services-grid">
-          <div class="card"><div class="service-title"><i class="fa-solid fa-icons"></i><h3>Social Media Creatives</h3></div><p>Professional posts and campaign visuals for Instagram, Facebook and promotions.</p></div>
-          <div class="card"><div class="service-title"><i class="fa-solid fa-building"></i><h3>Real Estate Designs</h3></div><p>Apartment promotions, property launch creatives, brochure layouts and site branding.</p></div>
-          <div class="card"><div class="service-title"><i class="fa-solid fa-motorcycle"></i><h3>Automobile Promotions</h3></div><p>Bike and vehicle ad designs with product-focused and campaign-based styling.</p></div>
-          <div class="card"><div class="service-title"><i class="fa-solid fa-book-open"></i><h3>Brochure Design</h3></div><p>Clean and premium brochure designs for marketing, branding and property sales.</p></div>
+          <div class="card">
+            <div class="service-title"><i class="fa-solid fa-icons"></i><h3>Social Media Creatives</h3></div>
+            <p>Professional posts and campaign visuals for Instagram, Facebook and promotions.</p>
+          </div>
+
+          <div class="card">
+            <div class="service-title"><i class="fa-solid fa-building"></i><h3>Real Estate Designs</h3></div>
+            <p>Apartment promotions, property launch creatives, brochure layouts and site branding.</p>
+          </div>
+
+          <div class="card">
+            <div class="service-title"><i class="fa-solid fa-motorcycle"></i><h3>Automobile Promotions</h3></div>
+            <p>Bike and vehicle ad designs with product-focused and campaign-based styling.</p>
+          </div>
+
+          <div class="card">
+            <div class="service-title"><i class="fa-solid fa-book-open"></i><h3>Brochure Design</h3></div>
+            <p>Clean and premium brochure designs for marketing, branding and property sales.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -398,7 +1004,10 @@
     <section id="contact">
       <div class="container">
         <h2 class="section-title gradient">Contact Me</h2>
-        <p class="section-subtitle">Feel free to contact me for new projects, collaborations and creative work.</p>
+        <p class="section-subtitle">
+          Feel free to contact me for new projects, collaborations and creative work.
+        </p>
+
         <div class="contact-grid">
           <div class="card contact-box">
             <h3>Let's Work Together</h3>
@@ -410,14 +1019,50 @@
               <a class="btn btn-secondary" href="mailto:merguarun1@gmail.com">Email Me</a>
             </div>
           </div>
+
           <div class="card">
             <div class="contact-list">
-              <a href="tel:+919440442062"><span class="soft-item"><span class="soft-icon phone-icon"><i class="fa-solid fa-phone"></i></span><span><strong>Phone:</strong> +91 94404 42062</span></span></a>
-              <a href="tel:+916309332132"><span class="soft-item"><span class="soft-icon phone-icon"><i class="fa-solid fa-mobile-screen-button"></i></span><span><strong>Alternate:</strong> +91 63093 32132</span></span></a>
-              <a href="mailto:merguarun1@gmail.com"><span class="soft-item"><span class="soft-icon mail-icon"><i class="fa-regular fa-envelope"></i></span><span><strong>Email:</strong> merguarun1@gmail.com</span></span></a>
-              <a href="mailto:arunjosh324@gmail.com"><span class="soft-item"><span class="soft-icon mail-icon"><i class="fa-solid fa-paper-plane"></i></span><span><strong>Alternate Email:</strong> arunjosh324@gmail.com</span></span></a>
-              <a href="https://instagram.com/arundesignn" target="_blank"><span class="soft-item"><span class="soft-icon insta-icon"><i class="fa-brands fa-instagram"></i></span><span><strong>Instagram:</strong> @arundesignn</span></span></a>
-              <a href="https://instagram.com/_arun_josh" target="_blank"><span class="soft-item"><span class="soft-icon insta-icon"><i class="fa-brands fa-instagram"></i></span><span><strong>Instagram 2:</strong> @_arun_josh</span></span></a>
+              <a href="tel:+919440442062">
+                <span class="soft-item">
+                  <span class="soft-icon phone-icon"><i class="fa-solid fa-phone"></i></span>
+                  <span><strong>Phone:</strong> +91 94404 42062</span>
+                </span>
+              </a>
+
+              <a href="tel:+916309332132">
+                <span class="soft-item">
+                  <span class="soft-icon phone-icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
+                  <span><strong>Alternate:</strong> +91 63093 32132</span>
+                </span>
+              </a>
+
+              <a href="mailto:merguarun1@gmail.com">
+                <span class="soft-item">
+                  <span class="soft-icon mail-icon"><i class="fa-regular fa-envelope"></i></span>
+                  <span><strong>Email:</strong> merguarun1@gmail.com</span>
+                </span>
+              </a>
+
+              <a href="mailto:arunjosh324@gmail.com">
+                <span class="soft-item">
+                  <span class="soft-icon mail-icon"><i class="fa-solid fa-paper-plane"></i></span>
+                  <span><strong>Alternate Email:</strong> arunjosh324@gmail.com</span>
+                </span>
+              </a>
+
+              <a href="https://instagram.com/arundesignn" target="_blank">
+                <span class="soft-item">
+                  <span class="soft-icon insta-icon"><i class="fa-brands fa-instagram"></i></span>
+                  <span><strong>Instagram:</strong> @arundesignn</span>
+                </span>
+              </a>
+
+              <a href="https://instagram.com/_arun_josh" target="_blank">
+                <span class="soft-item">
+                  <span class="soft-icon insta-icon"><i class="fa-brands fa-instagram"></i></span>
+                  <span><strong>Instagram 2:</strong> @_arun_josh</span>
+                </span>
+              </a>
             </div>
           </div>
         </div>
